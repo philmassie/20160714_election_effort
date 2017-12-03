@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.district {
+  fill: #bbb;
+}
+
+.district-boundary {
+  fill: none;
+  stroke: white;
+  stroke-linejoin: round;
+}
+
+.province-boundary {
+  fill: none;
+  stroke: black;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  text-anchor: middle;
+}
+
+div.tooltip {   
+  position: absolute;           
+  text-align: center;           
+  width: 150px;                  
+  height: 25px;                 
+  padding: 2px;             
+  font-size: 10px;     
+  background: #FFFFE0;
+  border: 1px;      
+  border-radius: 8px;           
+  pointer-events: none;         
+}  
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script type="text/javascript" src="http://d3js.org/queue.v1.min.js"></script>
+<script>
+
+var width = 1024,
+    height = 1024;
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+    
+//colours 
+
+var minimum = -0.45, maximum = 0.14;
+var minimumColor = "rgb(8,48,107)", maximumColor = "rgb(128, 0, 0)";
+var color = d3.scale.linear()
+    .domain([minimum, 0, maximum])
+    .range([minimumColor, "white", maximumColor]);
+
+var div = d3.select("body").append("div")   
+    .attr("class", "tooltip")               
+    .style("opacity", 0);
+    
+queue()
+    .defer(d3.csv, "d3_data.csv") //load attributes data from csv
+    .defer(d3.json, "za_provinces_districts_data.json") //load geometry
+  
+d3.json("za_provinces_districts_data.json", function(error, za) {
+    if (error) throw error;
+    
+    // define district variable
+    var districts = topojson.feature(za, za.objects.DistrictMunicipalities2011);
+
+    // work out scales and transforms
+    // Create a unit projection.
+    var projection = d3.geo.mercator()
+        .scale(1)
+        .translate([0, 0]);
+
+    // Create a path generator.
+    var path = d3.geo.path()
+        .projection(projection);
+
+    // Compute the bounds of a feature of interest, then derive scale & translate.
+    var b = path.bounds(districts),
+        s = .95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height),
+        t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+
+    // Update the projection to use computed scale & translate.
+    projection
+        .scale(s)
+        .translate(t);  
+
+    // draw districts infill
+    /*svg.append("path")
+        .datum(districts)
+        .attr("class", "district")
+        .attr("d", path)
+        .style("fill", function(d) {
+            return color(d.properties.ancrel);
+    });*/
+    
+
+        var n_prov = {};
+        var n_dist = {};
+        var party_change = {};
+
+        /*data.forEach(function(d) {
+            n_prov[d.RegionCode] = +d.Deaths;
+            n_dist[d.RegionCode] = d.RegionName;
+        });*/
+    
+        // draw district infill - coloured
+        svg.append("g")
+            .attr("class", "district")
+            .selectAll("path")
+            .data(districts.features)
+            .enter()
+            .append("path")
+            .attr("d", path)
+            .style("fill", function(d) {
+                return color(d.properties.ancrel);
+        })
+        .style("opacity", 0.8)
+        
+        //Adding mouseevents
+        .on("mouseover", function(d) {
+            d3.select(this).transition().duration(300).style("opacity", 1);
+            div.transition().duration(300)
+            .style("opacity", 1)
+            div.text("Hello")
+            //div.text(nameById[d.properties.region] + " : " + rateById[d.properties.region])
+            .style("left", (d3.event.pageX) + "px")
+            .style("top", (d3.event.pageY -30) + "px");
+        })
+        
+        .on("mouseout", function() {
+            d3.select(this)
+            .transition().duration(300)
+            .style("opacity", 0.8);
+            div.transition().duration(300)
+            .style("opacity", 0);
+        })
+
+        svg.append("path")
+            .datum(topojson.mesh(za, za.objects.DistrictMunicipalities2011, function(a, b) { return a !== b; }))
+            .attr("class", "district-boundary")
+            .attr("d", path);
+
+        svg.selectAll("text")
+            .data(districts.features)
+            .enter().append("text")
+            .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
+            .attr("dy", ".35em")
+            .text(function(d) { return Math.round(d.properties.ancrel * 100) + "%"; });
+
+        svg.insert("path", ".graticule")
+            .datum(topojson.mesh(za, za.objects.Province_New_SANeighbours, function(a, b) { return a !== b; }))
+            .attr("class", "province-boundary")
+            .attr("d", path);
+
+});    
+
+
+/*
+d3.json("readme-swiss.json", function(error, swiss) {
+  if (error) throw error;
+
+  var cantons = topojson.feature(swiss, swiss.objects.cantons);
+
+  svg.append("path")
+      .datum(cantons)
+      .attr("class", "canton")
+      .attr("d", path);
+
+  svg.append("path")
+      .datum(topojson.mesh(swiss, swiss.objects.cantons, function(a, b) { return a !== b; }))
+      .attr("class", "canton-boundary")
+      .attr("d", path);
+
+  svg.selectAll("text")
+      .data(cantons.features)
+    .enter().append("text")
+      .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
+      .attr("dy", ".35em")
+      .text(function(d) { return d.properties.name; });
+});
+*/
+</script>

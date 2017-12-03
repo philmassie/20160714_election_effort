@@ -1,0 +1,91 @@
+Shape to TopoJSON
+=================
+topojson ^
+    -o za_provinces.json ^
+    ../Province/Province_New_SANeighbours.shp ^
+    -p
+
+topojson ^
+     -o za_districts.json ^
+     ../Districts/DistrictMunicipalities2011.shp ^
+     -p DISTRICT -p MUNICNAME -p PROVNAME
+
+topojson ^
+    -o za_wards.json ^
+    ../Wards/Wards2011.shp ^
+    -p
+    
+more quantisation
+-----------------
+topojson ^
+    -o za_provinces_low.json ^
+    ../Province/Province_New_SANeighbours.shp ^
+    -p ^
+    -q 1e3
+
+topojson ^
+     -o za_districts_low.json ^
+     ../Districts/DistrictMunicipalities2011.shp ^
+     -p DISTRICT -p MUNICNAME -p PROVNAME ^
+     -q 1e3
+
+simplification + quantization
+--------------
+topojson ^
+     -o za_districts_low.json ^
+     ../../Districts/DistrictMunicipalities2011.shp ^
+     -p DISTRICT -p MUNICNAME -p PROVNAME ^
+     -q 1e3 ^
+     --simplify-proportion 0.5
+
+topojson ^
+    -o za_provinces_low.json ^
+    ../../Province/Province_New_SANeighbours.shp ^
+    -p ^
+    -q 1e3 ^
+    --simplify-proportion 0.5
+     
+     
+Attach data from .csv to TopoJSON
+=================================
+topojson ^
+    -o za_districts_data.json ^
+    -e pr_cand_data.csv ^
+        --id-property=+MapNo ^
+        -p ancrel=+rel ^
+        -p DISTRICT ^
+        -p MUNICNAME ^
+        -p PROVNAME ^
+        -p MapNo ^
+        -- za_districts.json
+        
+topojson ^
+    -o za_districts_data_new.json ^
+    -e b.csv ^
+        --id-property=+MapNo ^
+        -p Abahlali Bemzansi Organisation|absolute_change=+Abahlali Bemzansi Organisation|absolute_change ^
+        -p DISTRICT ^
+        -p MUNICNAME ^
+        -p PROVNAME ^
+        -p MapNo ^
+        -- za_districts.json
+
+Combine 2 TopoJSON files
+========================
+topojson ^
+    -o za_provinces_districts_data.json ^
+    za_districts_data.json ^
+        -p ancrel ^
+        -p DISTRICT ^
+        -p MUNICNAME ^
+        -p PROVNAME ^
+        -p MapNo ^
+    za_provinces.json 
+    
+   
+Subset Africa from natural earth land
+=====================================
+topojson ^
+    -o land.json ^
+    ../countries/ne_10m_admin_0_countries.shp ^
+    -p

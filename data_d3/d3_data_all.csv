@@ -1,0 +1,561 @@
+dist_code,party,Relative Change,Absolute Change
+BUF,African National Congress,-0.0372595506223395,-12
+BUF,Economic Freedom Fighters,0.175373134328358,47
+BUF,Democratic Alliance,0.0339727355999785,8
+BUF,Pan Africanist Congress Of Azania,-0.0351042620830864,-11
+BUF,African Independent Congress,0.00773209763457083,1
+BUF,United Democratic Movement,0.0131337895360741,3
+BUF,United Front Of The Eastern Cape,0.0447761194029851,12
+BUF,African Christian Democratic Party,0.0120426747130772,3
+BUF,United Congress,0.0335820895522388,9
+BUF,Peoples Alliance,0.0223880597014925,6
+BUF,Congress Of The People,-0.155113422059378,-43
+CPT,Democratic Alliance,0.093216279889138,68
+CPT,Economic Freedom Fighters,0.148631029986962,114
+CPT,African National Congress,0.00555284047273831,0
+CPT,African People's Convention,0.0593715548440415,45
+CPT,African Christian Democratic Party,0.0144227724910335,9
+CPT,Patriotic Alliance,0.0430247718383312,33
+CPT,Al Shura Party,0.0417209908735332,32
+CPT,United Democratic Movement,-0.0218492907139297,-19
+CPT,Independent Civic Organisation Of South Africa,0.0277301059748239,21
+CPT,South Africa People's Party,0.0325945241199478,25
+CPT,Pan Africanist Congress Of Azania,-0.00879362105273412,-8
+CPT,Al Jama-Ah,-0.0499479624160376,-41
+CPT,Sizwe Ummah Nation,0.0234680573663625,18
+CPT,Cape Muslim Congress,-0.0153125258767237,-13
+CPT,Local People's Party,0.015645371577575,12
+CPT,Khoisan Kingdom And All People,0.0143415906127771,11
+CPT,National Party South Africa,-0.0280580807629798,-23
+CPT,Coloured Voice,0.0104302477183833,8
+CPT,Christian Democratic Party,0.0091264667535854,7
+CPT,Inkatha Freedom Party,-0.0033268333709476,-3
+CPT,The Greens,0.00782268578878748,6
+CPT,Khoisan Revolution,0.00521512385919166,4
+CPT,Independent Sport Party,0.00391134289439374,3
+CPT,Ubuntu Party,0.00391134289439374,3
+CPT,Africa Muslim Party,0.000116901904689228,0
+CPT,South African People For Equality,0.00260756192959583,2
+CPT,Cape Party/ Kaapse Party,-0.00118687906010869,-1
+CPT,Congress Of The People,-0.052245409570694,-42
+CPT,National People's Party,-0.00367753908501529,-3
+CPT,People's Democratic Movement,0.00130378096479791,1
+CPT,Vryheidsfront Plus,-0.00616819910992189,-5
+DC1,Economic Freedom Fighters,0.185185185185185,10
+DC1,Democratic Alliance,0.0196078431372549,-1
+DC1,African National Congress,0.0452069716775599,1
+DC1,Khoisan Revolution,0.111111111111111,6
+DC1,Saldanha Bay Residents Alliance,0.111111111111111,6
+DC1,Nasionaal Demokratiese Party/National Democratic Party,0.0925925925925926,5
+DC1,United Democrats,0.0925925925925926,5
+DC1,The Peoples Independent Civic Organisation,-0.0179738562091503,-2
+DC1,Cape Party/ Kaapse Party,0.00381263616557734,0
+DC1,Vryheidsfront Plus,0.0185185185185185,1
+DC10,Economic Freedom Fighters,0.375,21
+DC10,African National Congress,-0.362637362637363,-3
+DC10,Democratic Alliance,-0.0521978021978022,4
+DC10,United Democratic Movement,0.142857142857143,8
+DC10,African Christian Democratic Party,0.0535714285714286,3
+DC10,Vryheidsfront Plus,-0.00274725274725275,1
+DC12,African National Congress,-0.105417956656347,-6
+DC12,United Democratic Movement,0.0434984520123839,5
+DC12,Economic Freedom Fighters,0.164705882352941,14
+DC12,United Congress,0.105882352941176,9
+DC12,African Independent Congress,0.0705882352941176,6
+DC12,United Residents Front,0.0705882352941176,6
+DC12,Congress Of The People,-0.349071207430341,-26
+DC12,Democratic Alliance,-0.00696594427244582,0
+DC12,Pan Africanist Congress Of Azania,0.0588235294117647,5
+DC13,African National Congress,-0.0783550986385107,-4
+DC13,United Democratic Movement,0.0600166712975827,4
+DC13,Economic Freedom Fighters,0.19672131147541,12
+DC13,United Front Of The Eastern Cape,0.0819672131147541,5
+DC13,African Independent Congress,0.0491803278688525,3
+DC13,Democratic Alliance,0.0152820227841067,1
+DC13,Congress Of The People,-0.170602945262573,-10
+DC13,Independent Ratepayers Association Of SA,0.0327868852459016,2
+DC13,Vryheidsfront Plus,-0.000555709919422061,0
+DC14,African National Congress,-0.375406636304489,-5
+DC14,Sterkspruit Civic Association,0.226415094339623,12
+DC14,Economic Freedom Fighters,0.207547169811321,11
+DC14,Democratic Alliance,-0.018217306441119,4
+DC14,Sterkspruit Development Forum,0.0943396226415094,5
+DC14,African Independent Congress,0.0377358490566038,2
+DC15,United Democratic Movement,0.0997352162400706,13
+DC15,Economic Freedom Fighters,0.203883495145631,21
+DC15,African National Congress,-0.247352162400706,-19
+DC15,Democratic Alliance,0.117939099735216,13
+DC15,Pan Africanist Congress Of Azania,0.058252427184466,6
+DC15,South African Security Organisation,0.0388349514563107,4
+DC15,Civic Independent,0.0177625772285966,2
+DC15,Civic Alliance Of South Africa,0.0194174757281553,2
+DC15,Congress Of The People,-0.308473080317741,-27
+DC16,African National Congress,0.0384024577572965,5
+DC16,Economic Freedom Fighters,0.32258064516129,10
+DC16,Democratic Alliance,-0.0460829493087558,0
+DC16,Vryheidsfront Plus,0.0491551459293395,2
+DC16,African Christian Democratic Party,0.032258064516129,1
+DC16,Congress Of The People,-0.396313364055299,-8
+DC18,African National Congress,-0.203634085213033,6
+DC18,Economic Freedom Fighters,0.263157894736842,15
+DC18,Democratic Alliance,0.0137844611528822,7
+DC18,Vryheidsfront Plus,0.0520050125313283,4
+DC18,Congress Of The People,-0.0181704260651629,0
+DC19,Dikwankwetla Party Of South Africa,-0.196620583717358,0
+DC19,Economic Freedom Fighters,0.142857142857143,18
+DC19,African National Congress,-0.107014848950333,2
+DC19,African People's Convention,0.00614439324116743,8
+DC19,Leihlo La Setjhaba Rainbow,0.119047619047619,15
+DC19,Democratic Alliance,0.00665642601126472,6
+DC19,United Residents Front,0.0714285714285714,9
+DC19,United Front Of Civics,0.0555555555555556,7
+DC19,African Christian Democratic Party,0.0396825396825397,5
+DC19,Vryheidsfront Plus,0.0156169994879672,3
+DC19,Congress Of The People,-0.104966717869944,-6
+DC2,Democratic Alliance,0.0334695963208994,2
+DC2,Economic Freedom Fighters,0.16504854368932,17
+DC2,Federation Of Democrats,0.16504854368932,17
+DC2,Alliance For Democratic Freedom,0.0776699029126214,8
+DC2,Breedevallei Onafhanklik,0.0679611650485437,7
+DC2,Witzenberg Aksie,0.0679611650485437,7
+DC2,African National Congress,-0.0645545903593936,-8
+DC2,Independent Civic Organisation Of South Africa,0.058252427184466,6
+DC2,African Christian Democratic Party,-0.0313404871401805,-4
+DC2,Democratic New Civic Association,0.029126213592233,3
+DC2,Langerberg Independent Party,0.029126213592233,3
+DC2,Patriotic Alliance,0.029126213592233,3
+DC2,United Franschhoek Valley,0.0194174757281553,2
+DC2,Congress Of The People,-0.104326349855221,-12
+DC2,People's Democratic Movement,-0.0867824902060978,-10
+DC2,Vryheidsfront Plus,-0.0253789814341679,-3
+DC20,Democratic Alliance,-0.0617841027421034,2
+DC20,African National Congress,-0.192988545643874,-4
+DC20,Economic Freedom Fighters,0.17910447761194,12
+DC20,African People's Convention,-0.0284623394654634,2
+DC20,Pan Africanist Congress Of Azania,0.119402985074627,8
+DC20,Metsimaholo Community Association,0.104477611940299,7
+DC20,Vryheidsfront Plus,0.0513710517181534,4
+DC20,Congress Of The People,-0.101353696633113,-4
+DC21,African National Congress,0.0346427466749149,0
+DC21,Economic Freedom Fighters,0.264150943396226,14
+DC21,Inkatha Freedom Party,0.015774822146613,-1
+DC21,African Independent Congress,0.0566037735849057,3
+DC21,Democratic Alliance,-0.0417568821527993,-3
+DC21,African Christian Democratic Party,-0.0606248066811011,-4
+DC21,African Mantungwa Community,0.0377358490566038,2
+DC21,Vryheidsfront Plus,0.021342406433653,1
+DC22,African National Congress,-0.0394117647058824,-1
+DC22,Inkatha Freedom Party,0.0354901960784314,4
+DC22,Economic Freedom Fighters,0.2,15
+DC22,Democratic Alliance,0.0984313725490196,8
+DC22,Azanian People's Organisation,-0.0215686274509804,-1
+DC22,African Christian Democratic Party,-0.0201960784313725,-1
+DC22,African Mantungwa Community,0.0266666666666667,2
+DC23,National Democratic Convention,0.293333333333333,22
+DC23,African National Congress,-0.0355555555555555,2
+DC23,Economic Freedom Fighters,0.173333333333333,13
+DC23,Inkatha Freedom Party,-0.0888888888888889,-2
+DC23,Democratic Alliance,0.0111111111111111,2
+DC23,People's Revolutionary Movement,0.0533333333333333,4
+DC23,National Peoples Ambassadors,0.04,3
+DC23,African Mantungwa Community,0.0266666666666667,2
+DC23,African Christian Democratic Party,-0.0792592592592593,-4
+DC23,Vryheidsfront Plus,0.0133333333333333,1
+DC24,Economic Freedom Fighters,0.372093023255814,16
+DC24,African National Congress,0.0558139534883721,4
+DC24,Inkatha Freedom Party,-0.053156146179402,0
+DC24,Democratic Alliance,-0.026578073089701,0
+DC24,African Mantungwa Community,0.0232558139534884,1
+DC25,Royal Loyal Progress,0.106407322654462,6
+DC25,African National Congress,0.00800915331807781,-2
+DC25,Economic Freedom Fighters,0.144736842105263,11
+DC25,Inkatha Freedom Party,0.0554919908466819,3
+DC25,Democratic Alliance,0.0486270022883295,3
+DC25,Congress Of The People,-0.0623569794050343,-7
+DC25,Vryheidsfront Plus,0.0091533180778032,0
+DC25,Azanian People's Organisation,-0.0257437070938215,-3
+DC25,African Christian Democratic Party,-0.0062929061784897,-1
+DC25,People's Revolutionary Movement,0.0263157894736842,2
+DC26,African National Congress,0.130125751776927,7
+DC26,Inkatha Freedom Party,0.0809185347184254,4
+DC26,Economic Freedom Fighters,0.169491525423729,10
+DC26,Democratic Alliance,-0.0281574630945872,-2
+DC26,African Christian Democratic Party,0.00164024056861673,0
+DC26,Vryheidsfront Plus,0.0169491525423729,1
+DC27,Inkatha Freedom Party,0.116708385481852,-1
+DC27,African National Congress,0.0625782227784731,-2
+DC27,Economic Freedom Fighters,0.234042553191489,11
+DC27,Democratic Alliance,0.0131414267834793,0
+DC28,African National Congress,0.0624881291547958,9
+DC28,Inkatha Freedom Party,-0.00227920227920231,4
+DC28,Economic Freedom Fighters,0.209876543209877,17
+DC28,Academic Congress Union,0.0987654320987654,8
+DC28,Democratic Alliance,-0.166001899335233,-10
+DC28,African Christian Democratic Party,0.0216524216524216,2
+DC28,African Mantungwa Community,0.0246913580246914,2
+DC28,Vryheidsfront Plus,-0.00303893637226971,0
+DC29,Economic Freedom Fighters,0.223880597014925,15
+DC29,African Christian Democratic Party,0.110138960370561,8
+DC29,Inkatha Freedom Party,-0.0277920741121976,0
+DC29,African National Congress,-0.042717447246526,-1
+DC29,Democratic Alliance,-0.0805455481214617,-4
+DC29,Academic Congress Union,0.0447761194029851,3
+DC29,Al Jama-Ah,0.0447761194029851,3
+DC29,African Mantungwa Community,0.0298507462686567,2
+DC29,Democratic Liberal Congress,0.0298507462686567,2
+DC29,People's Revolutionary Movement,0.0149253731343284,1
+DC29,Ubumbano Lwesizwe Sabangoni,0.0149253731343284,1
+DC3,Economic Freedom Fighters,0.228571428571429,8
+DC3,Democratic Alliance,-0.0699507389162562,-8
+DC3,Dienslewerings Party,0.171428571428571,6
+DC3,Independent Civic Organisation Of South Africa,0.142857142857143,5
+DC3,African National Congress,-0.0753694581280788,-7
+DC3,United Democratic Movement,-0.0408866995073892,-5
+DC3,People's Democratic Movement,0.0285714285714286,1
+DC3,Vryheidsfront Plus,0.0113300492610837,0
+DC30,African National Congress,0.0121212121212121,5
+DC30,Economic Freedom Fighters,0.2375,19
+DC30,African People's Convention,0.125,10
+DC30,Sindawonye Progressive Party,0.0875,7
+DC30,Democratic Alliance,-0.212878787878788,-13
+DC30,Vryheidsfront Plus,0.0446969696969697,4
+DC30,African Christian Democratic Party,0.00719696969696969,1
+DC30,Pan Africanist Congress Of Azania,0.00719696969696969,1
+DC30,Congress Of The People,-0.184469696969697,-12
+DC30,Socialist Green Coalition,0.0125,1
+DC31,African National Congress,-0.0136524822695035,5
+DC31,Economic Freedom Fighters,0.183333333333333,22
+DC31,Abahlali Bemzansi Organisation,0.141666666666667,17
+DC31,African Christian Democratic Party,0.0764184397163121,10
+DC31,Sindawonye Progressive Party,-0.00177304964539007,2
+DC31,Democratic Alliance,-0.188652482269504,-16
+DC31,Pan Africanist Congress Of Azania,0.0416666666666667,5
+DC31,Vryheidsfront Plus,0.0120567375886525,2
+DC31,Asisikimeni Community Development And Advice Movement,0.025,3
+DC31,Bolsheviks Party Of South Africa,0.025,3
+DC31,African People's Convention,-0.0790780141843972,-7
+DC31,United Democratic Movement,0.0166666666666667,2
+DC31,Congress Of The People,-0.119326241134752,-11
+DC31,Forum 4 Service Delivery,0.00833333333333333,1
+DC32,African National Congress,-0.0212216483269706,3
+DC32,Bushbuckridge Residents Association,0.198630136986301,29
+DC32,Economic Freedom Fighters,0.184931506849315,27
+DC32,Residence Association Of South Africa,0.136986301369863,20
+DC32,African People's Convention,0.0303166404671008,6
+DC32,Democratic Alliance,-0.144621603413429,-16
+DC32,African Christian Democratic Party,0.00280709633954637,1
+DC32,Pan Africanist Congress Of Azania,-0.136537165955536,-16
+DC32,Vryheidsfront Plus,-0.0204356613518976,-2
+DC32,Congress Of The People,-0.230855602964294,-28
+DC33,African National Congress,0.0411799065420561,2
+DC33,Economic Freedom Fighters,0.197916666666667,19
+DC33,African People's Convention,0.0772001557632399,7
+DC33,Democratic Alliance,0.0761292834890966,7
+DC33,Civic Warriors Of Maruleng,0.0833333333333333,8
+DC33,National Independent Party,0.0729166666666667,7
+DC33,African Christian Democratic Party,-0.0309579439252336,-4
+DC33,Pan Africanist Congress Of Azania,-0.191978193146417,-21
+DC33,United Democratic Movement,-0.00506230529595016,-1
+DC33,Ximoko Party,0.00428348909657321,0
+DC33,Congress Of The People,-0.185845015576324,-20
+DC33,Vryheidsfront Plus,0.0104166666666667,1
+DC34,African National Congress,-0.112639029322548,-5
+DC34,Economic Freedom Fighters,0.13953488372093,24
+DC34,International Revelation Congress,0.13953488372093,24
+DC34,Pan Africanist Congress Of Azania,-0.057633973710819,0
+DC34,Ximoko Party,0.032103134479272,8
+DC34,Democratic Alliance,0.0291708796764409,7
+DC34,Leadership Forum,0.0581395348837209,10
+DC34,African Christian Democratic Party,0.000151668351870582,3
+DC34,Service For All,0.0465116279069767,8
+DC34,United Democratic Movement,-0.0404448938321537,-2
+DC34,South African United Party,0.0406976744186047,7
+DC34,Azanian People's Organisation,-0.0637007077856421,-6
+DC34,Musina Mutale Unified Front,0.0232558139534884,4
+DC34,Value Education Nationalism Democracy In Africa,0.0232558139534884,4
+DC34,Congress Of The People,-0.176794742163802,-20
+DC34,Vryheidsfront Plus,0.00581395348837209,1
+DC35,United Christian Democratic Party,0.189393939393939,25
+DC35,African National Congress,-0.121004566210046,1
+DC35,Economic Freedom Fighters,0.166666666666667,22
+DC35,Democratic Alliance,0.0375674553756746,9
+DC35,African Christian Democratic Party,0.0285388127853881,7
+DC35,Agang South Africa,0.0757575757575758,10
+DC35,Lebowakgomo Civic Organization,0.0606060606060606,8
+DC35,Azanian People's Organisation,-0.167600664176007,-10
+DC35,Pan Africanist Congress Of Azania,0.0378787878787879,5
+DC35,United Democratic Movement,-0.0518887505188875,-2
+DC35,Bolsheviks Party Of South Africa,0.0151515151515152,2
+DC35,Congress Of The People,-0.238999584889996,-17
+DC35,Forum 4 Service Delivery,0.00757575757575758,1
+DC35,Value Education Nationalism Democracy In Africa,0.00757575757575758,1
+DC35,Vryheidsfront Plus,-0.019821502698215,-1
+DC36,United Christian Democratic Party,0.371794871794872,29
+DC36,African National Congress,-0.153846153846154,0
+DC36,Economic Freedom Fighters,0.179487179487179,14
+DC36,Democratic Alliance,0.043956043956044,6
+DC36,Thabazimbi Residents Association,0.0641025641025641,5
+DC36,South African Christian Movement,0.0384615384615385,3
+DC36,Pan Africanist Congress Of Azania,-0.0695970695970696,-2
+DC36,Congress Of The People,-0.201465201465201,-8
+DC36,Vryheidsfront Plus,-0.0824175824175824,-3
+DC37,Economic Freedom Fighters,0.243243243243243,27
+DC37,African National Congress,-0.117117117117117,-2
+DC37,Forum 4 Service Delivery,0.108108108108108,12
+DC37,Vryheidsfront Plus,0.0734580734580735,9
+DC37,Democratic Alliance,-0.0252945252945253,1
+DC37,African People's Convention,-0.107415107415107,-6
+DC37,United Christian Democratic Party,0.0540540540540541,6
+DC37,African Christian Democratic Party,0.0103950103950104,2
+DC37,Pan Africanist Congress Of Azania,0.027027027027027,3
+DC37,United Democratic Movement,0.027027027027027,3
+DC37,African Independent Congress,0.018018018018018,2
+DC37,Congress Of The People,-0.0550935550935551,-4
+DC38,African Christian Democratic Party,0.174884792626728,27
+DC38,Working-Together Political Party,0.142857142857143,20
+DC38,African National Congress,-0.136635944700461,1
+DC38,United Christian Democratic Party,0.121428571428571,17
+DC38,Economic Freedom Fighters,0.107142857142857,15
+DC38,Democratic Alliance,0.0158986175115207,6
+DC38,South African Political Party,-0.385483870967742,-20
+DC38,Are Ageng Afrika,0.0357142857142857,5
+DC38,Vryheidsfront Plus,0.0195852534562212,4
+DC38,Agang South Africa,0.0285714285714286,4
+DC38,Congress Of The People,-0.188248847926267,-10
+DC38,Forum 4 Service Delivery,0.0214285714285714,3
+DC38,African Independent Congress,0.0142857142857143,2
+DC38,Azanian People's Organisation,0.0142857142857143,2
+DC38,International Revelation Congress,0.0142857142857143,2
+DC39,Economic Freedom Fighters,0.390625,25
+DC39,African National Congress,-0.207236842105263,-3
+DC39,African Christian Democratic Party,-0.169407894736842,-4
+DC39,Congress Of The People,-0.132401315789474,-3
+DC39,Democratic Alliance,-0.0271381578947368,1
+DC39,Forum 4 Service Delivery,0.078125,5
+DC39,United Christian Democratic Party,0.0625,4
+DC39,Vryheidsfront Plus,0.00493421052631579,1
+DC4,Democratic Alliance,0.0179125865775018,6
+DC4,Economic Freedom Fighters,0.122641509433962,13
+DC4,African Independent Congress,0.10377358490566,11
+DC4,Independent Civic Organisation Of South Africa,0.00250776212085026,3
+DC4,Knysna Unity Congress,0.0849056603773585,9
+DC4,South Africa Civics,0.0849056603773585,9
+DC4,African National Congress,-0.10174349176021,-6
+DC4,Christian Democrats,0.0566037735849057,6
+DC4,George Independent Ratepayers Forum,0.0566037735849057,6
+DC4,Plaaslike Besorgde Inwoners,0.0471698113207547,5
+DC4,African Christian Democratic Party,-0.152137568664915,-11
+DC4,South African Religious Civic Organisation,0.0377358490566038,4
+DC4,Congress Of The People,-0.10449008836876,-8
+DC4,Vryheidsfront Plus,0.00943396226415094,1
+DC40,Economic Freedom Fighters,0.36036036036036,40
+DC40,African National Congress,-0.448198198198198,-13
+DC40,Vryheidsfront Plus,0.105292792792793,13
+DC40,Movemeant Of God,0.108108108108108,12
+DC40,Forum 4 Service Delivery,0.0810810810810811,9
+DC40,Independent Councillors,0.0810810810810811,9
+DC40,Democratic Alliance,-0.0737612612612613,1
+DC40,Congress Of The People,-0.190315315315315,-8
+DC40,Pan Africanist Congress Of Azania,0.018018018018018,2
+DC42,Economic Freedom Fighters,0.377952755905512,48
+DC42,Democratic Alliance,0.0350313353687932,8
+DC42,African National Congress,-0.0442712518078097,0
+DC42,Azanian People's Organisation,0.102362204724409,13
+DC42,Pan Africanist Congress Of Azania,-0.0279607906154588,0
+DC42,Vryheidsfront Plus,-0.0719910011248594,-5
+DC42,African Christian Democratic Party,-0.0988269323477422,-9
+DC42,Inkatha Freedom Party,0.00554394986340993,1
+DC42,Congress Of The People,-0.226819861802989,-22
+DC43,African National Congress,0.077717879604672,7
+DC43,Inkatha Freedom Party,-0.0215633423180593,2
+DC43,Economic Freedom Fighters,0.207547169811321,11
+DC43,Azanian People's Organisation,0.0943396226415094,5
+DC43,Democratic Alliance,-0.167565139263252,-6
+DC44,South African Communist Party,0.206896551724138,18
+DC44,Economic Freedom Fighters,0.195402298850575,17
+DC44,African National Congress,-0.0459770114942529,-4
+DC44,African Independent Congress,-0.160919540229885,-14
+DC44,Democratic Alliance,0.0919540229885058,8
+DC44,United Democratic Movement,-0.0229885057471264,-2
+DC44,His Lordship To Save And Lead Party,0.0459770114942529,4
+DC45,Economic Freedom Fighters,0.434782608695652,20
+DC45,African National Congress,-0.321589205397301,-6
+DC45,Congress Of The People,-0.101949025487256,0
+DC45,Democratic Alliance,-0.119940029985007,-2
+DC45,Vryheidsfront Plus,0.0652173913043478,3
+DC45,United Christian Democratic Party,0.0434782608695652,2
+DC47,United Christian Democratic Party,0.16551724137931,24
+DC47,Economic Freedom Fighters,0.151724137931034,22
+DC47,African National Congress,-0.047832964251819,0
+DC47,South African Maintanance And Estate Beneficiaries Association,0.0209427396393546,7
+DC47,African People's Socialist Party,0.0827586206896552,12
+DC47,Bolsheviks Party Of South Africa,0.0620689655172414,9
+DC47,Democratic Alliance,-0.0204998418222082,0
+DC47,Socialist Agenda Of Dispossessed Africans,0.0482758620689655,7
+DC47,Socialist Radical Change,0.0482758620689655,7
+DC47,Azanian People's Organisation,-0.0205631129389434,-1
+DC47,Sekhukhune Congress,0.0275862068965517,4
+DC47,Pan Africanist Congress Of Azania,-0.0985763998734578,-10
+DC47,African People's Convention,-0.114647263524201,-12
+DC47,Vryheidsfront Plus,0.00689655172413793,1
+DC48,African National Congress,0.0154826958105647,11
+DC48,Economic Freedom Fighters,0.172131147540984,21
+DC48,People's Civic Organisation,0.131147540983607,16
+DC48,Azanian People's Organisation,0.0901639344262295,11
+DC48,Democratic Alliance,-0.127909330095122,-7
+DC48,United Democratic Movement,-0.000202388180530255,2
+DC48,Vryheidsfront Plus,-0.0372394252175673,-1
+DC48,African Christian Democratic Party,0.040983606557377,5
+DC48,Independent Ratepayers Association Of SA,-0.0207447885043513,0
+DC48,International Revelation Congress,0.040983606557377,5
+DC48,Inkatha Freedom Party,-0.0412871888281724,-2
+DC48,Merafong Civic Association,0.0327868852459016,4
+DC5,Karoo Democratic Force,0.242424242424242,8
+DC5,Economic Freedom Fighters,0.181818181818182,6
+DC5,Karoo Gemeenskap Party,0.181818181818182,6
+DC5,African National Congress,-0.00233100233100234,-1
+DC5,Democratic Alliance,-0.233100233100233,-10
+DC5,Independent Civic Organisation Of South Africa,-0.118881118881119,-5
+DC5,Vryheidsfront Plus,0.0303030303030303,1
+DC6,African National Congress,-0.0726495726495727,3
+DC6,Democratic Alliance,-0.128205128205128,2
+DC6,Congress Of The People,-0.235042735042735,-1
+DC6,Economic Freedom Fighters,0.153846153846154,6
+DC6,Khoisan Revolution,0.153846153846154,6
+DC6,Vryheidsfront Plus,0.128205128205128,5
+DC7,Democratic Alliance,0.0907441016333938,5
+DC7,Economic Freedom Fighters,0.263157894736842,10
+DC7,African National Congress,-0.341197822141561,-8
+DC7,Vryheidsfront Plus,0.210526315789474,8
+DC7,Congress Of The People,-0.223230490018149,-6
+DC8,Economic Freedom Fighters,0.204545454545455,9
+DC8,Congress Of The People,-0.193181818181818,-1
+DC8,Democratic Alliance,-0.0492424242424243,2
+DC8,Khoisan Revolution,0.159090909090909,7
+DC8,African National Congress,-0.28030303030303,-4
+DC8,Vryheidsfront Plus,0.136363636363636,6
+DC8,Save Tsantsabane Coalition,0.0227272727272727,1
+DC9,Economic Freedom Fighters,0.433333333333333,26
+DC9,African National Congress,-0.133739837398374,-2
+DC9,Democratic Alliance,0.00365853658536586,3
+DC9,Azanian People's Organisation,-0.0873983739837399,-2
+DC9,Vryheidsfront Plus,0.0833333333333333,5
+DC9,Congress Of The People,-0.299186991869919,-11
+EKU,Democratic Alliance,0.0345475997345328,14
+EKU,Economic Freedom Fighters,0.163612565445026,125
+EKU,African National Congress,0.0162721529877344,2
+EKU,United Residents Front,0.081151832460733,62
+EKU,Pan Africanist Congress Of Azania,-0.0236216601528894,-26
+EKU,African Independent Congress,0.0484293193717278,37
+EKU,Academic Congress Union,0.0458115183246073,35
+EKU,African People's Convention,-0.0598222844922941,-55
+EKU,Ekurhuleni Community Movement,0.0366492146596859,28
+EKU,African Christian Democratic Party,-0.0052417471671214,-7
+EKU,Inkatha Freedom Party,0.0122286950323231,8
+EKU,Palmridge Community Forum,0.0235602094240838,18
+EKU,United Democratic Movement,0.00776122704815279,5
+EKU,United Front Of Civics,0.0157068062827225,12
+EKU,African People's Socialist Party,0.0130890052356021,10
+EKU,Azanian People's Organisation,0.0130890052356021,10
+EKU,Pan African Socialist Movement Of Azania,0.0130890052356021,10
+EKU,Patriotic Alliance,0.0117801047120419,9
+EKU,Independent Ratepayers Association Of SA,-0.010790747978271,-10
+EKU,International Revelation Congress,0.00916230366492147,7
+EKU,Vryheidsfront Plus,-0.00257478553695647,-3
+EKU,Building A Cohesive Society,0.00785340314136126,6
+EKU,Al Jama-Ah,0.00130890052356021,1
+ETH,Democratic Alliance,0.0266461924575656,28
+ETH,Economic Freedom Fighters,0.181972789115646,107
+ETH,African National Congress,-0.0802159698830989,-32
+ETH,Inkatha Freedom Party,0.0192820817647447,18
+ETH,African Christian Democratic Party,-0.0183871606895185,-5
+ETH,People's Revolutionary Movement,0.0527210884353742,31
+ETH,Minorities Of South Africa,0.0391156462585034,23
+ETH,African People's Convention,0.0337725381414702,20
+ETH,United Peoples Party,0.0357142857142857,21
+ETH,African Mantungwa Community,0.0289115646258503,17
+ETH,Democratic Liberal Congress,0.0289115646258503,17
+ETH,Allied Movement For Change,0.0272108843537415,16
+ETH,Minority Front,-0.0468297998811175,-23
+ETH,United Residents Front,0.0153061224489796,9
+ETH,Azanian People's Organisation,-0.00532989894987121,-2
+ETH,Independent People's Party,0.00850340136054422,5
+ETH,Academic Congress Union,0.00510204081632653,3
+ETH,Independent Ratepayers Association Of SA,0.00510204081632653,3
+ETH,United Democratic Movement,-0.0181989300574599,-9
+ETH,Al Jama-Ah,0.00340136054421769,2
+ETH,Congress Of The People,-0.0895614556502212,-46
+ETH,The Promise Of Freedom,0.00170068027210884,1
+ETH,Truly Alliance,-0.00024106730070669,0
+ETH,Vryheidsfront Plus,-0.00218281487352222,-1
+JHB,Democratic Alliance,0.16846347799511,162
+JHB,African National Congress,-0.00874847188264058,29
+JHB,Economic Freedom Fighters,0.165036674816626,135
+JHB,Azanian People's Organisation,-0.000420232273838632,8
+JHB,People's Civic Organisation,0.0366748166259169,30
+JHB,African People's Convention,-0.0807151589242054,-46
+JHB,African Independent Congress,0.0256723716381418,21
+JHB,Inkatha Freedom Party,-0.0133901283618582,-4
+JHB,United Democratic Movement,0.00101237775061125,5
+JHB,African Christian Democratic Party,-0.0186201100244499,-8
+JHB,Operation Khanyisa Movement,0.00148991442542787,4
+JHB,Agang South Africa,0.0146699266503667,12
+JHB,Vryheidsfront Plus,-0.00217756723716381,1
+JHB,African People's Socialist Party,0.0122249388753056,10
+JHB,Building A Cohesive Society,0.0122249388753056,10
+JHB,Al Jama-Ah,-0.00618505501222494,-2
+JHB,Patriotic Alliance,0.0110024449877751,9
+JHB,Patriotic Association Of South Africa,0.0110024449877751,9
+JHB,The Socialist Party Of Azania,0.00142496943765281,2
+JHB,Bolsheviks Party Of South Africa,0.00366748166259169,3
+JHB,International Revelation Congress,0.00366748166259169,3
+JHB,Pan Africanist Congress Of Azania,-0.0209925122249389,-13
+JHB,Ubuntu Party,0.00244498777506112,2
+JHB,Prem Peoples Agenda,0.00122249388753056,1
+JHB,Truly Alliance,0.00122249388753056,1
+MAN,African National Congress,0.0165915915915916,0
+MAN,Democratic Alliance,0.0264014014014014,3
+MAN,Economic Freedom Fighters,0.185185185185185,50
+MAN,African People's Convention,-0.00648148148148148,-5
+MAN,United Residents Front,-0.00297797797797797,-3
+MAN,African Christian Democratic Party,0.0132632632632633,2
+MAN,African Independent Congress,0.037037037037037,10
+MAN,Azanian Alliance Congress,0.037037037037037,10
+MAN,Vryheidsfront Plus,0.0336586586586587,9
+MAN,Dikwankwetla Party Of South Africa,-0.10518018018018,-32
+MAN,United Christian Democratic Party,0.0185185185185185,5
+MAN,Congress Of The People,-0.192242242242242,-57
+NMA,Democratic Alliance,0.0805933484504913,49
+NMA,African National Congress,-0.0296044343663391,0
+NMA,Economic Freedom Fighters,0.121399176954733,59
+NMA,United Democratic Movement,-0.00681321911480641,7
+NMA,African Power Movement,0.0761316872427984,37
+NMA,Independent Civic Organisation Of South Africa,0.0679012345679012,33
+NMA,African Independent Congress,0.0617283950617284,30
+NMA,United Front Of The Eastern Cape,0.0555555555555556,27
+NMA,Azanian People's Organisation,-0.0685416141765348,-23
+NMA,Building A Cohesive Society,0.0308641975308642,15
+NMA,Pan Africanist Congress Of Azania,-0.0681321911480642,-24
+NMA,Patriotic Alliance,0.0246913580246914,12
+NMA,Vryheidsfront Plus,-0.00238305198622659,1
+NMA,African Christian Democratic Party,-0.0120937263794407,-3
+NMA,Christian Democratic Party,-0.0222978080120937,-7
+NMA,Alternative Democrats,0.0164609053497942,8
+NMA,Ubuntu Party,0.00411522633744856,2
+NMA,Congress Of The People,-0.107636264382296,-42
+TSH,Democratic Alliance,0.0575019040365575,45
+TSH,Economic Freedom Fighters,0.169230769230769,110
+TSH,African National Congress,-0.0163442498095963,-3
+TSH,African People's Socialist Party,0.0830769230769231,54
+TSH,Pan Africanist Congress Of Azania,0.015978674790556,13
+TSH,Vryheidsfront Plus,0.025991368367606,19
+TSH,African Christian Democratic Party,0.000929169840060931,3
+TSH,Agang South Africa,0.0369230769230769,24
+TSH,Christian Democratic Party,-0.0467885250063468,-27
+TSH,Azanian People's Organisation,-0.00377253109926377,-1
+TSH,United Democratic Movement,0.00867225184056867,6
+TSH,African People's Convention,-0.103427265803503,-62
+TSH,African Christian Alliance-Afrikaner Christen Alliansie,-0.00232038588474232,-1
+TSH,United Front Of Civics,0.00769230769230769,5
+TSH,African Mandate Congress,0.00615384615384615,4
+TSH,Movement Democratic Party,-0.0728306676821528,-44

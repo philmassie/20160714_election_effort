@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+svg {
+	position: absolute;
+}
+.districts {
+  fill: none;
+
+}
+
+.dist_external{
+  fill: none;
+  stroke: green;
+  stroke-linejoin: round;  
+  stroke-width: 2;
+
+}
+
+.country_background {
+    fill: #ffcc00;
+}
+
+
+.dist_internal{
+  fill: none;
+  stroke: white;
+  stroke-linejoin: round;  
+  stroke-width: 0.8;
+}
+
+.prov_external{
+  fill: none;
+  stroke: #1a1a1a;
+  stroke-linejoin: round;
+  stroke-width: 1;
+}
+
+.prov_internal{
+  fill: none;
+  stroke: #1a1a1a;
+  stroke-linejoin: round;
+  stroke-width: 1;
+}
+
+
+.infolabel {
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);;
+    border: solid thin #fff;
+    padding: 5px;
+}
+
+.infolabel h1 {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    line-height: 1em;
+}
+
+.infolabel b {
+    float: left;
+}
+
+</style>
+<body>
+blah blah blah
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script>
+//begin script when window loads
+window.onload = initialize();
+
+//global variables
+var keyArray = ["rel", "abs"];	 //array of property keys
+var expressed = keyArray[0]; //initial attribute
+
+//the first function called once the html is loaded
+function initialize(){
+    setMap();
+};
+
+//set choropleth map parameters
+function setMap(){
+    //map frame dimensions
+    var width = 800;
+    var height = 700;
+      
+    //use queue.js to parallelize asynchronous data loading
+    queue()
+        .defer(d3.csv, "pr_anc_data.csv") //load attributes from csv
+        .defer(d3.json, "za_provinces.json") //load geometry
+        .defer(d3.json, "za_districts.json") //load geometry
+        .await(callback); //trigger callback function once data is loaded
+        // await passes above vars in order:
+        // callback(error, pr_anc_data, za_provinces, za_districts)
+
+    function callback(error, pr_anc_data, za_prov_data, za_dist_data){
+        // error handling first
+        if (error) throw error;
+
+        //create a new svg element with the above dimensions
+        var map = d3.select("body")
+            .append("svg")
+                .attr("width", width)
+                .attr("height", height);
+            
+        // variables for csv to json data transfer
+        var districts_data = za_dist_data.objects.za_districts.geometries;		
+        // assign topoJSON Features or FeatureCollections to variables
+        var provinces = topojson.feature(za_prov_data, za_prov_data.objects.za_provinces);
+        var districts = topojson.feature(za_dist_data, za_dist_data.objects.za_districts);
+        
+        createDropdown(pr_anc_data);
+
+        
+     
+        
+        // loop through csv to assign each csv values to json district
+        for (var i=0; i<pr_anc_data.length; i++) {		
+            var csv_district = pr_anc_data[i]; //the current region
+            var csv_dist_code = csv_district.dist_code; //adm1 code
+
+            //loop through json regions to find right region
+            for (var a=0; a<districts_data.length; a++){
+
+                //where adm1 codes match, attach csv to json object		
+                if (districts_data[a].properties.DISTRICT	== csv_dist_code){
+
+                    // assign all five key/value pairs			
+                    for (var key in keyArray){
+                        var attr = keyArray[key];			
+                        var val = parseFloat(csv_district[attr]);	
+                        districts_data[a].properties[attr] = val;
+                    };
+
+                    districts_data[a].properties.name = csv_district.name; //set prop
+                    break; //stop looking through the json regions
+                };
+            };
+        }; 
+        
+
+        // -- Start Projection --
+        
+        // Projection math is based on TopoJSON feature extents so it comes here
+
+        // using SA Albers equal area projection for Africa
+        var Proj4_string = "+proj=aea +lat_1=20 +lat_2=-23 +lat_0=0 +lon_0=25 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs";
+        var Proj4 = proj_vals(Proj4_string);
+
+        // SA Albers values are for entire continent so update Proj4 parallel values to 
+        // north and sounth bounds of TopoJSON feature (SA Provinces).
+        // alert("BL:" + d3.geo.bounds(provinces)[0] + " \nTR: " + d3.geo.bounds(provinces)[1])
+        var b = d3.geo.bounds(provinces);
+        var p = [b[1][1], b[0][1]];
+        //var c = [0, b[1][1] - b[0][1]]; // not quite figured out yet
+        //var r = [b[1][0] - b[0][0], 0]; // not quite figured out yet
+
+        var projection = d3.geo.albers()
+            .parallels(p)
+            //.parallels(Proj4.p)
+            .center(Proj4.c)
+            .rotate(Proj4.r)
+            .scale(1)
+            .translate([0, 0]);
+
+        // Create a path generator called path.
+        var path = d3.geo.path()
+            .projection(projection);
+
+        // Compute the bounds of Provinces, then derive scale & translate.
+        var b = path.bounds(provinces),
+            s = .95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height),
+            t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+
+        // Update the projection to use computed scale & translate.
+        projection
+            .scale(s)
+            .translate(t);
+            
+        // -- End Projection --
+
+        
+
+            
+            
+        //add South Africa district geometry to map	
+        var recolorMap = colorScale(pr_anc_data);
+        //add districts to map as enumeration units colored by data
+        var dist_mapped = map.selectAll(".regions")
+            .data(districts.features)
+            .enter() //create elements
+            .append("path") //append elements to svg
+            .attr("class", "districts") //assign class for additional styling
+            .attr("id", function(d) { return d.properties.DISTRICT }) // use DISTRICT to identify
+            .attr("d", path) //project data as geometry in svg
+            .style("fill", function(d) { //color enumeration units
+                return choropleth(d, recolorMap);
+                })
+            .style("opacity", 1)
+            .on("mouseover", highlight)
+            .on("mouseout", dehighlight)
+            .append("desc") //append the current color
+                .text(function(d) {
+                    return choropleth(d, recolorMap);			 	
+            });            
+
+        // Draw boundary lines
+        // provincial internal and external to country
+        var prov_internal = topojson.mesh(za_prov_data, za_prov_data.objects.za_provinces, function(a, b) { return a !== b; })
+        var prov_external = topojson.mesh(za_prov_data, za_prov_data.objects.za_provinces, function(a, b) { return a == b; })	
+        // district internal and external to provinces - not working
+        var dist_internal = topojson.mesh(za_dist_data, za_dist_data.objects.za_districts, function(a, b) { return a !== b; })
+        //var dist_external = topojson.mesh(za_dist_data, za_dist_data.objects.za_districts, function(a, b) { alert(a.PROVNAME) })
+
+        /*var dist_external_line = map.append("path")
+            .datum(dist_external)
+            .attr("d", path)
+            .attr("class", "dist_external"); */ 
+
+        var dist_internal_line = map.append("path")
+            .datum(dist_internal)
+            .attr("d", path)
+            .attr("class", "dist_internal");       
+
+        var prov_internal_line = map.append("path")
+            .datum(prov_internal)
+            .attr("d", path)
+            .attr("class", "prov_internal");
+            
+        var prov_external_line = map.append("path")
+            .datum(prov_external)
+            .attr("d", path)
+            .attr("class", "prov_external");           
+
+    };
+}
+
+// functions
+// ---------
+
+
+//colours 
+
+
+	
+
+
+function createDropdown(csvData){
+    //add a select element for the dropdown menu
+    var dropdown = d3.select("body")
+        .append("div")
+        .attr("class","dropdown") //for positioning menu with css
+        .html("<h3>Select Variable:</h3>")
+        .append("select")
+        .on("change", function(){
+            changeAttribute(this.value, csvData);
+        });
+
+    //create each option element within the dropdown
+    dropdown.selectAll("options")
+        .data(keyArray)
+        .enter()
+        .append("option")
+        .attr("value", function(d){ return d })
+        .text(function(d) {
+            d = d[0].toUpperCase() +
+                d.substring(1,3) + " " + 
+                d.substring(3);
+            return d
+        });
+};
+
+
+function changeAttribute(attribute, csvData){
+    //change the expressed attribute
+    expressed = attribute;
+    
+    //recolor the map
+    d3.selectAll(".districts") //select every region
+        .style("fill", function(d) { //color enumeration units
+            return choropleth(d, colorScale(csvData)); //->
+        })
+        .select("desc") //replace the color text in each desc element
+            .text(function(d) {
+                return choropleth(d, colorScale(csvData)); //->
+        });
+};
+
+// build a colour scale
+function colorScale(csvData){
+    var min = d3.min(csvData, function(d) { return +d[expressed]; }),
+        mid = "0",
+        max = d3.max(csvData, function(d) { return +d[expressed]; }),
+        mincol = "#053061",
+        midcol = "white",
+        maxcol = "#a50026"
+        
+    var color = d3.scale.linear()
+        .domain([min, mid, max])
+        .range([mincol, midcol, maxcol]);
+    return color;	 //return the color scale generator
+};   
+
+// return the appropriate colour for the area
+function choropleth(d, recolorMap){
+
+		//get data value
+        // from topojson
+		var value = d.properties[expressed];
+        alert(value)
+		//if value exists, assign it a color; otherwise assign gray
+		if (value) {
+            //alert(value);
+			return recolorMap(value);
+		} else {
+			return "#ccc";
+		};
+	}; 
+
+
+function highlight(data){
+    // change opacity for mouseover
+    var props = data.properties; //json properties
+    var district = d3.select("#"+props.DISTRICT);
+    //district.style("opacity", 0.8)
+    district.style("fill", "#ffcc66"); //set the enumeration unit fill to black
+
+    // build an info label div
+    // content
+    var head = "Proportional change in representation"
+    var party = "ANC"
+    var prov_name = props.PROVNAME
+    var dist_name = props.MUNICNAME
+    var delta = (props[expressed] * 100).toFixed(2)
+    var labelAttribute = "<h1>" + head + "</h1><br>" +
+        "<b>Party: " + party + "</b><br>" +
+        "<b>Province: " + prov_name + "</b><br>" +
+        "<b>Municipality/district: " + dist_name + "</b><br>" +
+        "<b>Change: " + delta + "%</b>"; //label content
+
+    //create info label div
+    var infolabel = d3.select("body").append("div")
+        .attr("class", "infolabel") //for styling label
+        .attr("id", props.DISTRICT+"label") //for label div
+        .html(labelAttribute); //add text
+
+};
+
+function dehighlight(data){
+
+    //json or csv properties
+    var props = data.properties; //json properties
+    var district = d3.select("#"+props.DISTRICT);
+    //district.style("opacity", 1);
+    var fillcolor = district.select("desc").text(); //access original color from desc
+    district.style("fill", fillcolor); //set the enumeration unit fill to orig
+    
+    d3.select("#"+props.DISTRICT+"label").remove(); //remove info label
+};   
+
+function proj_vals(pstring){
+
+    function proj_val_stripper(val){
+        var start = pstring.indexOf(val) + 6;
+        var end = pstring.substr(start).indexOf(" ");
+        return(pstring.substr(start).substr(0,end));
+    }
+    var p1 = proj_val_stripper("lat_1");
+    var p2 = proj_val_stripper("lat_2");
+    var c = proj_val_stripper("lat_0");
+    var r = proj_val_stripper("lon_0");
+    
+    var p = [+p1, +p2];
+    var c = [0, +c];
+    var r = [(+r * (-1)) , +0];
+    
+    return {
+        p: p,
+        c: c,
+        r: r
+    };
+};   
+    
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+</script>

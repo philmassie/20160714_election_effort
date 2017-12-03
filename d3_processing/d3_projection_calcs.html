@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+svg {
+    position: absolute;
+}
+.districts {
+    fill: white;
+    stroke: black;
+    stroke-linejoin: round;  
+    stroke-width: 0.8;
+}
+
+</style>
+<body>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script>
+
+queue()
+    .defer(d3.json, "data/za_districts_low.json") //load geometry
+    .await(ready);
+
+function ready(error, topo_dist) {
+    if (error) throw error;
+
+    var width = 620;
+    var height = 540;
+    r = height/width
+    s = 1
+    
+    width = width * s
+    height = width * r
+
+    //create a new svg element with the above dimensions
+    var map = d3.select("body")
+        .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .attr("viewBox", "0 0 " + width + " " + height)
+            .attr("preserveAspectRatio", "xMidYMid meet");
+
+    // assign topoJSON Features or FeatureCollections to variables
+    var districts = topojson.feature(topo_dist, topo_dist.objects.DistrictMunicipalities2011);            
+
+    // -- Start Projection --
+    // Projection math is based on TopoJSON feature extents so it comes here
+
+    // using Africa Albers equal area projection for Africa
+    var Proj4_string = "+proj=aea +lat_1=20 +lat_2=-23 +lat_0=0 +lon_0=25 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs";
+    var Proj4 = proj_vals(Proj4_string);
+    //console.log(Proj4)
+
+    // Africa Albers values are for entire continent so update Proj4 parallel values to 
+    // north and sounth bounds of TopoJSON feature (SA districts).
+    // alert("BL:" + d3.geo.bounds(districts)[0] + " \nTR: " + d3.geo.bounds(districts)[1])
+    var b = d3.geo.bounds(districts);
+    var za_parallels = [b[1][1], b[0][1]];
+    //var center = [0, b[1][1] - b[0][1]]; // not quite figured out yet
+    //var rotate = [b[1][0] - b[0][0], 0]; // not quite figured out yet
+    
+    
+
+    var projection = d3.geo.albers()
+        .parallels(za_parallels)
+        //.parallels(Proj4.parallels)
+        .center(Proj4.center)
+        .rotate(Proj4.rotate)
+        .scale(1)
+        .translate([0, 0]);
+
+    // Create a path generator called path.
+    var path = d3.geo.path()
+        .projection(projection);
+
+    // Compute the bounds of districts, then derive scale & translate.
+    var b = path.bounds(districts),
+        s = .95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height),
+        t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+
+    // Update the projection to use computed scale & translate.
+    projection
+        .scale(s)
+        .translate(t);
+        
+console.log(".parallels([" + za_parallels + "])")
+console.log(".center([" + Proj4.center + "])")
+console.log(".rotate([" + Proj4.rotate + "])") 
+console.log(".scale([" + s + "])")   
+console.log(".translate([" + t + "])") 
+    // -- End Projection --
+    
+
+    
+    
+    
+    //add South Africa district geometry to map	
+    map.append("g")
+        .selectAll("path")
+        .data(districts.features)
+        .enter()
+            .append("path")
+                .attr("class", "districts")
+                .attr("d", path);
+
+}
+
+// FUNCTIONS
+// =========
+
+// PROJECTION MATH
+function proj_vals(pstring){
+
+    function proj_val_stripper(val){
+        var start = pstring.indexOf(val) + 6;
+        var end = pstring.substr(start).indexOf(" ");
+        return(pstring.substr(start).substr(0,end));
+    }
+    var p1 = proj_val_stripper("lat_1");
+    var p2 = proj_val_stripper("lat_2");
+    var c = proj_val_stripper("lat_0");
+    var r = proj_val_stripper("lon_0");
+    
+    var p = [+p1, +p2];
+    var c = [0, +c];
+    var r = [(+r * (-1)) , +0];
+    
+    return {
+        parallel: p,
+        center: c,
+        rotate: r
+    };
+};   
+</script>
